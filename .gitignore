@@ -3,3 +3,5 @@ bin
 obj
 *.zip
 *.tar.gz
+/xeokit/.vs/xeokit/v16/.suo
+/xeokit/xeokit-metadata/Properties/launchSettings.json
