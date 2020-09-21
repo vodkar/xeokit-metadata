@@ -134,6 +134,14 @@ namespace XeokitMetadata {
                 return metaModel;
             }
         }
+
+        /// <summary>
+        /// Extract from objectDefinition listed in propertiesNames properties,
+        /// form dictionary and return this
+        /// </summary>
+        /// <param name="objectDefinition">IfcObject</param>
+        /// <param name="propertiesNames">Properties with this names will be extracted and returned</param>
+        /// <returns>Required properties with values</returns>
         private static Dictionary<string, object> getObjectProperties(IIfcObjectDefinition objectDefinition, List<string> propertiesNames) {
             IfcObject ifcObject = objectDefinition as IfcObject;
             if (ifcObject == null || propertiesNames == null) {
