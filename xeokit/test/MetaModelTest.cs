@@ -21,7 +21,7 @@ namespace test {
     [Test]
     public void metaModelTest() {
       try {
-        var metaModel = MetaModel.fromIfc(ifcPath);
+        var metaModel = MetaModel.fromIfc(ifcPath, null);
         var json = metaModel.serialize();
         Assert.True(json.Equals(mock), "Data is not equal with required one.");
       }
