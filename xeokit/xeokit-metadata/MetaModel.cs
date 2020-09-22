@@ -40,6 +40,15 @@ namespace XeokitMetadata {
         ///   The properties of the building element.
         /// </summary>
         public Dictionary<string, object>? properties;
+
+        /// <summary>
+        /// To ignore when serialize to json
+        /// </summary>
+        /// <returns></returns>
+        public bool ShouldSerializeproperties()
+        {
+            return this.properties.Count > 0;
+        }
 #nullable disable
     }
 
@@ -152,7 +161,7 @@ namespace XeokitMetadata {
                 foreach (IfcProperty property in propertySet.HasProperties) {
                     IfcPropertySingleValue singleProperty = property as IfcPropertySingleValue;
                     if (singleProperty != null && propertiesNames.Contains(singleProperty.Name)) {
-                        tempDict[singleProperty.Name.ToString()] = singleProperty.NominalValue;
+                        tempDict[singleProperty.Name.ToString()] = singleProperty.NominalValue.ToString();
                     }
                 }
             }
