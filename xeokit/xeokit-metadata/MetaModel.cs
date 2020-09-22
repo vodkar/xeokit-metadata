@@ -229,7 +229,7 @@ namespace XeokitMetadata {
                         name = element.Name,
                         type = element.GetType().Name,
                         parent = spatialElement.GlobalId,
-                        properties = getObjectProperties(objectDefinition, withProperties),
+                        properties = getObjectProperties(element, withProperties),
                     };
 
                     metaObjects.Add(mo);
